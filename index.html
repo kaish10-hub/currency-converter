@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="" alt="">
+            <h2>Currency Converter</h2>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Rates</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="mode-toggle">
+            <p>Dark Mode</p>
+            <button>
+                <img src="modetoggle.svg" alt="">
+            </button>
+        </div>
+    </nav>
+    
+    <main> 
+        <section class="converter">
+            <h1>Currency Converter</h1>
+            <p>Convert currencies in real time with live exchange rates</p>
+            <div class="input">
+                <label>Amount</label>
+                <div class="amount-box">
+                    <input type="number" placeholder="1000">
+                </div>
+            </div>
+
+            <div class="currency-row">
+                <div class="select-box">
+                    <label>From</label>
+                    <select>
+                        <option>INR - Indian Rupee</option>
+                        <option>USD - US Dollar</option>
+                        <option>EUR - Europe</option>
+                        <option>AUD - Australian Dollar</option>
+                        <option>JPY - Japanese Yen</option>
+                        <option>ZAR - South African Rand</option>
+                    </select>
+                </div>
+                <button class="swap">
+                    <img src="swapBtn.svg" alt="">
+                </button>
+
+                <div class="select-box">
+                    <label>To</label>
+                    <select>
+                        <option>INR - Indian Rupee</option>
+                        <option>USD - US Dollar</option>
+                        <option>EUR - Europe</option>
+                        <option>AUD - Australian Dollar</option>
+                        <option>JPY - Japanese Yen</option>
+                        <option>ZAR - South African Rand</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="convert-btn">
+                Convert
+            </button>
+
+            <div class="result">
+                <div>
+                    <p>Converted Amount</p>
+                    <h2>paisa .. yaha aayega</h2>
+                    <span>1 USD = 83.24 (conversion rate)</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Live Rates</h3>
+                <p>Real time exchange rates</p>
+            </div>
+            <div class="feature">
+                <h3>Fast Conversion</h3>
+                <p>Get instant conversion in seconds</p>
+            </div>
+            <div class="feature">
+                <h3>Secure</h3>
+                <p>Your data is safe with us</p>
+            </div>
+            <div class="feature">
+                <h3>Responsive</h3>
+                <p>Works on all devices seamlessly</p>
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Currency Converter. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
