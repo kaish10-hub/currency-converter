@@ -2,14 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    
+}
+html{
+    scroll-behavior: smooth;
 }
 body{
     background-color: white;
     color: black;
     line-height: 1.6;
-
 }
 nav{
     background-color: rgb(209, 140, 140);
@@ -18,14 +20,22 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 4px solid #c1121f;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 100;
+    margin-bottom: 12px;
 }
 .logo{
     display:flex;
     align-items:center;
     gap:10px;
 }
-
+.logo img{
+    width:42px;
+    height:42px;
+}
 .logo h2{
     font-size:30px;
     letter-spacing:0.8px;
@@ -69,40 +79,30 @@ nav ul li a:hover{
     color: white;
 }
 
-/* MAIN  */
-
-
 main{
     width:90%;
-    max-height:500px;
-    margin:40px auto;
-    /* background-color: red; */
+    margin:70px auto 40px;
+    padding-bottom: 30px;
 }
-
-/* converter */
-
-
 .converter-header{
-    
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     gap: 12px;
     margin-bottom: 35px;
-    flex-wrap: wrap; /* Mobile par next line me aa jayega */
+    flex-wrap: wrap; 
 }
 
 .converter-header h1{
     font-size: 42px;
     margin: 0;
     border-bottom: 3px solid #c1121f;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 }
 
 .converter-header p{
-    margin: 0;
-    color: #090909;
+    margin-top: 5px;
+    color: #555;
     font-size: 18px;
-     border-bottom: 1px solid #c1121f;
+    border-bottom: 1px solid #c1121f;
    
 }
 
@@ -130,21 +130,32 @@ select:focus{
 }
 .currency-row{
     display:flex;
-    align-items:end;
+    justify-content: center;
+    align-items:flex-end;
     gap:25px;
 }
-
 .select-box{
     flex:1;
 }
-
-.swap img{
-    width:25px;
+.swap{
+    margin-top:30px;
+    width:50px;
+    height:50px;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    transition: 0.3s;
 }
-
 .swap:hover{
-    background:#d39da4;
+    background:#c1121f;
     transform:rotate(180deg);
+}
+.swap:hover img{
+    filter:brightness(0) invert(1);
 }
 .convert-btn{
     width:100%;
@@ -156,8 +167,110 @@ select:focus{
     font-size:20px;
     cursor:pointer;
     transition:.3s;
+    border-radius: 12px;
+    font-weight: 700;
 }
 
 .convert-btn:hover{
     background:#8d0e18;
+}
+.features{
+    margin-top: 40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+.feature{
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    transition: 0.3s;
+    border-top: 4px solid #c1121f;
+}
+.feature:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.feature h3{
+    font-size: 22px;
+    margin-bottom: 12px;
+    color:#c1121f;
+}
+.feature p{
+    color:#555;
+    font-size:16px;
+}
+
+footer{
+    background:#222;
+    color:white;
+    margin-top:20px;
+    padding:35px 8% 15px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content: center;
+    gap:140px;
+}
+.footer-section ul{
+    list-style:none;
+}
+.footer-section ul li{
+    margin-bottom:10px;
+}
+.footer-section h3{
+    margin-bottom:15px;
+    color:#fff;
+}
+.footer-section a{
+    text-decoration:none;
+    color:#bbb;
+    transition:.3s;
+}
+.footer-section a:hover{
+    color:#c1121f;
+}
+.footer-section p{
+    color:#bbb;
+    margin-bottom:10px;
+}
+.copyright{
+    text-align:center;
+    color:#999;
+    font-size:14px;
+}
+.result{
+    margin-top: 40px;
+    padding:15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d3d4d8;
+    border: 2px solid #cca1a1;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+.result:hover{
+    transform: scale(1.01);
+}
+.result .title{
+    font-size: 17px;
+    color:#666;
+    margin-bottom: 10px;
+}
+.result h2{
+    font-size: 42px;
+    color:#111;
+    margin-bottom: 8px;
+}
+.result-icon img{
+    width: 120px;
+    height:120px;
+    opacity: 0.9;
+}
+.mt{
+    margin-top: 40px;
 }

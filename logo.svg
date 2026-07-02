@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="48"
+     height="48"
+     viewBox="0 0 64 64"
+     fill="none">
+
+    <!-- Circular Arrows -->
+    <path d="M16 24
+             A18 18 0 0 1 48 18"
+          stroke="#C1121F"
+          stroke-width="4"
+          stroke-linecap="round"/>
+
+    <polygon points="48,18 43,16 45,22"
+             fill="#C1121F"/>
+
+    <path d="M48 40
+             A18 18 0 0 1 16 46"
+          stroke="#C1121F"
+          stroke-width="4"
+          stroke-linecap="round"/>
+
+    <polygon points="16,46 21,48 19,42"
+             fill="#C1121F"/>
+
+    <!-- Coin -->
+    <circle cx="32"
+            cy="32"
+            r="11"
+            fill="#C1121F"/>
+
+    <text x="32"
+          y="37"
+          text-anchor="middle"
+          font-size="14"
+          font-family="Arial"
+          font-weight="bold"
+          fill="white">$</text>
+
+</svg>
