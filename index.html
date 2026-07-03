@@ -33,7 +33,9 @@
     <main>
         <section id="converter" class="converter">
             <div class="converter-header">
-                <h1>Currency Converter</h1>
+                <div class="heading">
+                    <h1>Currency Converter</h1>
+                </div>
                 <p>Convert currencies in real time with live exchange rates</p>
 
             </div>
@@ -41,40 +43,40 @@
             <div class="input">
                 <label>Amount</label>
                 <div class="amount-box">
-                    <input type="number" placeholder="1000">
+                    <input type="number" id="amount" placeholder="1000">
                 </div>
             </div>
 
             <div class="currency-row">
                 <div class="select-box">
                     <label>From</label>
-                    <select>
-                        <option>INR - Indian Rupee</option>
-                        <option>USD - US Dollar</option>
-                        <option>EUR - Europe</option>
-                        <option>AUD - Australian Dollar</option>
-                        <option>JPY - Japanese Yen</option>
-                        <option>ZAR - South African Rand</option>
+                    <select id="fromCurrency">
+                        <option value="INR">INR - Indian Rupee</option>
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR">EUR - Europe</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="ZAR">ZAR - South African Rand</option>
                     </select>
                 </div>
-                <button class="swap">
+                <button class="swap" id="swapBtn">
                     <img src="swapBtn.svg" alt="">
                 </button>
 
                 <div class="select-box">
                     <label>To</label>
-                    <select>
-                        <option>INR - Indian Rupee</option>
-                        <option>USD - US Dollar</option>
-                        <option>EUR - Europe</option>
-                        <option>AUD - Australian Dollar</option>
-                        <option>JPY - Japanese Yen</option>
-                        <option>ZAR - South African Rand</option>
+                    <select id="toCurrency">
+                        <option value="INR">INR - Indian Rupee</option>
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR">EUR - Europe</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="ZAR">ZAR - South African Rand</option>
                     </select>
                 </div>
             </div>
 
-            <button class="convert-btn">
+            <button class="convert-btn" id="convertBtn">
                 Convert
             </button>
 
@@ -82,7 +84,7 @@
                 <div class="result-text">
                     <p class="title">Converted Amount</p>
                     <h2 id="convertedAmount">₹83,240.00</h2>
-                    <span class="rate">1 USD = 83.24</span>
+                    <span class="rate" id="exchangeRate">1 USD = 83.24</span>
                 </div>
                 <div class="result-icon">
                     <img src="currency.svg" alt="Currency">
@@ -106,6 +108,113 @@
             <div class="feature">
                 <h3>Responsive</h3>
                 <p>Works on all devices seamlessly</p>
+            </div>
+        </section>
+
+        <section id="rates" class="rates-section">
+            <div class="section-title">
+                <div class="heading">
+                    <h2>Live Exchange Rates</h2>
+                </div>
+                <p>Real time exchange rates updated every few seconds</p>
+            </div>
+            <div class="updated">
+                <i class="fa-regular fa-clock"></i>
+                Last Updated :
+                <span id="lastUpdated">03 July 2026, 1:35PM</span>
+            </div>
+
+            <div class="rates-grid">
+                <div class="rate-card">
+                    <div class="currency-top">
+                        <div class="currency-info">
+                            <img src="https://flagsapi.com/US/flat/64.png" alt="">
+                            <div>
+                                <h3>USD → INR</h3>
+                                <small>US Dollar</small>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>₹83.24</h1>
+                    <span class="positive">
+                        +0.12%
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </span>
+                </div>
+                
+                <div class="rate-card">
+                        <div class="currency-info">
+                            <img src="https://flagsapi.com/EUR/flat/64.png" alt="">
+                            <div>
+                                <h3>EUR → INR</h3>
+                                <small>Euro</small>
+                            </div>
+                        </div>
+                    <h1>₹97.63</h1>
+                    <span class="negative">
+                        -0.08%
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </span>
+                </div>
+
+                <div class="rate-card">
+                        <div class="currency-info">
+                            <img src="https://flagsapi.com/GB/flat/64.png" alt="">
+                            <div>
+                                <h3>GBP → INR</h3>
+                                <small>British Pound</small>
+                            </div>
+                    </div>
+                    <h1>₹113.45</h1>
+                    <span class="positive">
+                        +0.30%
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </span>
+                </div>
+
+                <div class="rate-card">
+                        <div class="currency-info">
+                            <img src="https://flagsapi.com/JP/flat/64.png" alt="">
+                            <div>
+                                <h3>JPY → INR</h3>
+                                <small>Japanese Yen</small>
+                            </div>
+                        </div>
+                    <h1>₹0.57</h1>
+                    <span class="positive">
+                        +0.05%
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </span>
+                </div>
+
+                <div class="rate-card">
+                        <div class="currency-info">
+                            <img src="https://flagsapi.com/AE/flat/64.png" alt="">
+                            <div>
+                                <h3>AED → INR</h3>
+                                <small>UAE Dirham</small>
+                            </div>
+                        </div>
+                     <h1>₹22.67</h1>
+                    <span class="neutral">
+                        Stable
+                    </span>
+                </div>
+
+                <div class="rate-card">
+                        <div class="currency-info">
+                            <img src="https://flagsapi.com/CA/flat/64.png" alt="">
+                            <div>
+                                <h3>CAD → INR</h3>
+                                <small>Canadian Dollar</small>
+                            </div>
+                        </div>
+                    <h1>₹61.28</h1>
+                    <span class="negative">
+                        -0.10%
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </span>
+                </div>
             </div>
         </section>
 
