@@ -111,29 +111,6 @@ nav ul a:hover::after{
     width:100%;
 }
 
-.mode-toggle{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.mode-toggle button{
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    background:#eef7f6;
-    transition:.3s;
-}
-
-.mode-toggle button:hover{
-    transform:rotate(25deg);
-    background:var(--primary);
-}
-
-.mode-toggle button img{
-    width:24px;
-}
-
 .converter{
     margin-top:60px;
     background:white;
