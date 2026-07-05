@@ -22,6 +22,8 @@ const currencyNames = {
   NPR: "Nepalese Rupee",
 };
 
+const btnText = document.querySelector(".btn-text");
+const spinner = document.querySelector(".spinner");
 const amount = document.getElementById("amount");
 const fromCurrency = document.getElementById("fromCurrency");
 const toCurrency = document.getElementById("toCurrency");
@@ -31,6 +33,8 @@ const convertedAmount = document.getElementById("convertedAmount");
 const exchangeRate = document.getElementById("exchangeRate");
 const lastUpdated = document.getElementById("lastUpdated");
 const ratesGrid = document.getElementById("ratesGrid");
+const toast = document.getElementById("toast");
+const toastMessage = document.querySelector(".toast-message");
 
 async function loadLiveRates(){
   try{
@@ -76,15 +80,44 @@ const symbols = {
   NPR: "₹",
 };
 
-async function convertCurrency(){
+function showToast(message, type){
+    toastMessage.innerText = message;
+    toast.classList.remove("success","error","warning");
+    if(type === "success"){
+        toast.classList.add("success");
+        document.querySelector(".toast-icon").innerHTML = "✅";
+    }
+    else if(type === "warning"){
+        toast.classList.add("warning");
+        document.querySelector(".toast-icon").innerHTML = "⚠️";
+    }
+    else{
+        toast.classList.add("error");
+        document.querySelector(".toast-icon").innerHTML = "❌";
+    }
+    toast.style.opacity = "1";
+    toast.style.visibility = "visible";
+    toast.style.right = "25px";
+
+    setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.visibility = "hidden";
+        toast.style.right = "-400px";
+    },3000);
+}
+
+async function convertCurrency(showNotification = true){
   const amountValue = Number(amount.value);
   if (!amountValue || amountValue <= 0) {
-    alert("Please enter a valid amount.");
+    showToast("Please enter a valid amount.","warning");
     return;
   }
 
+  console.log(getComputedStyle(toast).opacity)
+
   try {
-    convertBtn.innerText = "Converting...";
+    btnText.innerText = "Converting...";
+    spinner.style.display = "inline-block";
     convertBtn.disabled = true;
     convertedAmount.innerText = "Loading...";
     exchangeRate.innerText = "Fetching latest exchange rate...";
@@ -103,13 +136,18 @@ async function convertCurrency(){
       },
     )}`;
 
+    if(showNotification){
+      showToast("Currency converted successfully.","success");
+    }
+
     exchangeRate.innerText = `1 ${fromCurrency.value} = ${rate.toFixed(4)} ${toCurrency.value}`;
 
     updateTime();
   } catch (err) {
-    alert("Unable to fetch exchange rates.");
+    showToast("Unable to fetch exchange rates.","error");
   } finally {
-    convertBtn.innerText = "Convert";
+    btnText.innerText = "Convert";
+    spinner.style.display = "none";
     convertBtn.disabled = false;
   }
 }
@@ -170,4 +208,4 @@ amount.value = 1000;
 fromCurrency.value = "USD";
 toCurrency.value = "INR";
 
-convertCurrency();
+convertCurrency(false);

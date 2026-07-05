@@ -223,6 +223,10 @@ nav ul a:hover::after {
     font-weight: 600;
     transition: .35s;
     margin-top: 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
 }
 
 .convert-btn:hover {
@@ -303,6 +307,10 @@ footer {
     margin: 15px 0;
 }
 
+.footer-section li{
+    margin: 12px 0;
+}
+
 .footer-section a {
     color: #d9d9d9;
     transition: .3s;
@@ -353,6 +361,22 @@ select:focus {
     background: rgba(255, 255, 255, .2);
     transform: skewX(-25deg);
     transition: .6s;
+}
+
+.spinner{
+    width:18px;
+    height:18px;
+    border:3px solid rgba(255,255,255,.3);
+    border-top:3px solid white;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+    display:none;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
 }
 
 .convert-btn:hover::before {
@@ -625,14 +649,13 @@ select:focus {
     margin-top: 40px;
 }
 
-.features h2 {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 50px;
-    color: var(--primary)
+.features-title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:50px;
+    color:var(--primary);
 }
 
-/* Feature cards use CSS grid so they wrap cleanly at every breakpoint */
 .features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -721,7 +744,37 @@ select:focus {
     box-shadow: 0 10px 25px rgba(15, 118, 110, .3);
 }
 
-/* ============ RESPONSIVE BREAKPOINTS ============ */
+.toast{
+    position: fixed;
+    top: 25px;
+    right: -400px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ef4444;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    font-size: 15px;
+    font-weight: 500;
+    opacity:0;
+    visibility:hidden;
+    transition: right .4s ease, opacity .4s ease;
+    z-index: 9999;
+}
+
+.toast.success{
+    background:#22c55e;
+}
+
+.toast.error{
+    background:#ef4444;
+}
+
+.toast.warning{
+    background:#f59e0b;
+}
 
 @media(max-width:1000px) {
     .features {
@@ -789,9 +842,7 @@ select:focus {
 
 }
 
-
 @media(max-width:900px) {
-
     .left,
     .right {
         width: 100%;
@@ -807,7 +858,6 @@ select:focus {
         text-align: center;
         gap: 20px;
     }
-
 }
 
 
@@ -883,7 +933,6 @@ select:focus {
 
 
 @media(max-width:600px) {
-
     .stats {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -909,7 +958,6 @@ select:focus {
 
 
 @media(max-width:500px) {
-
     .logo {
         gap: 8px;
     }
@@ -991,7 +1039,6 @@ select:focus {
 }
 
 @media(max-width:380px) {
-
     .converter-header h1 {
         font-size: 22px;
     }
@@ -1011,7 +1058,6 @@ select:focus {
 
 }
 
-/* hamburger hidden by default on desktop */
 .menu-toggle {
     display: none;
 }
@@ -1035,7 +1081,6 @@ select:focus {
     transition: .3s;
 }
 
-/* animate into an "X" when checked */
 .menu-toggle:checked~.hamburger span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -1049,7 +1094,6 @@ select:focus {
 }
 
 @media(max-width:768px) {
-
     .hamburger {
         display: flex;
     }

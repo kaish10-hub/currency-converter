@@ -12,7 +12,7 @@
 <body>
     <nav>
     <div class="logo">
-        <img src="logo.svg" alt="">
+        <img src="images/logo.svg" alt="">
         <h2>Currency Converter</h2>
     </div>
 
@@ -64,7 +64,7 @@
                     </select>
                 </div>
                 <button class="swap" id="swapBtn">
-                    <img src="swapBtn.svg" alt="">
+                    <img src="images/swapBtn.svg" alt="">
                 </button>
 
                 <div class="select-box">
@@ -84,17 +84,18 @@
             </div>
 
             <button class="convert-btn" id="convertBtn">
-                Convert
+                <span class="btn-text">Convert</span>
+                <span class="spinner"></span>
             </button>
 
             <div class="result">
                 <div class="result-text">
                     <p class="title">Converted Amount</p>
                     <h2 id="convertedAmount">--</h2>
-                    <span class="rate" id="exchangeRate">Exchange rate will appear here</span>
+                    <span class="rate" id="exchangeRate">Exchange Rate</span>
                 </div>
                 <div class="result-icon">
-                    <img src="currency.svg" alt="Currency">
+                    <img src="images/currency.svg" alt="Currency">
                 </div>
             </div>
         </section>
@@ -143,13 +144,13 @@
             </div>
 
             <div class="right">
-                <img src="world_map.svg" alt="World Map">
+                <img src="images/world_map.svg" alt="World Map">
             </div>
 
             </div>
 
+            <h2 class="features-title">Why Choose Us?</h2>
             <div class="features">
-                <h2>Why Choose Us?</h2>
                 <div class="card">
                 <img src="ABOUT_PAGE/6_lightning_icon.png" alt="">
 
@@ -203,9 +204,11 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Contact</h3>
-                <ul><p>📧 kaishredmi743@gmail.com</p></ul>
-                <ul><p>📞 +91 8009142170</p></ul>
-                <ul><p>📞 +91 9068077251</p></ul>
+                <ul>
+                    <li><a href="mailto:kaishredmi743@gmail.com">📧 kaishredmi743@gmail.com</a></li>
+                    <li>📞 +91 8009142170</li>
+                    <li>📞 +91 9068077251</li>
+                </ul>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
@@ -218,6 +221,10 @@
             </div>
         </div>
     </footer>
+    <div id="toast" class="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message"></span>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
