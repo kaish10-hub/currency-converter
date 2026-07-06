@@ -119,6 +119,10 @@ nav ul a:hover::after {
     border-radius: 25px;
     padding: 50px;
     box-shadow: var(--shadow);
+    transition:.35s;
+}
+.converter:hover{
+    transform:translateY(-5px);
 }
 
 .converter-header {
@@ -233,6 +237,9 @@ nav ul a:hover::after {
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(15, 118, 110, .3);
 }
+.convert-btn:active{
+    transform:scale(.97);
+}
 
 .result {
     margin-top: 40px;
@@ -244,6 +251,11 @@ nav ul a:hover::after {
     padding: 35px;
     border-radius: 20px;
     gap: 20px;
+    transition: 0.35s;
+}
+
+.result:hover{
+    transform:translateY(-5px);
 }
 
 .result-text {
@@ -272,7 +284,16 @@ nav ul a:hover::after {
 
 .result-icon img {
     width: 120px;
-    animation: float 3s infinite ease-in-out;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
 }
 footer {
     background: #181818;
@@ -373,9 +394,54 @@ select:focus {
     display:none;
 }
 
+button{
+    transition:.3s;
+}
+
+select{
+    transition:.3s;
+}
+
+input{
+    transition:.3s;
+}
+
 @keyframes spin{
     to{
         transform:rotate(360deg);
+    }
+}
+
+.result-pop{
+    animation:pop .4s ease;
+}
+
+@keyframes pop{
+    0%{
+        transform:scale(.9);
+        opacity:0;
+    }
+    60%{
+        transform:scale(1.05);
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.rate-animation{
+    animation:fade .4s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 
@@ -455,7 +521,7 @@ select:focus {
 }
 
 .rate-card:hover {
-    transform: translateY(-8px);
+    transform:translateY(-10px) scale(1.02);
     box-shadow: 0 18px 45px rgba(0, 0, 0, .15);
 }
 
@@ -679,7 +745,7 @@ select:focus {
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform:translateY(-10px) scale(1.03);
 }
 
 .card img {
@@ -1123,4 +1189,14 @@ select:focus {
         max-height: 400px;
     }
 
+}
+.hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
 }
