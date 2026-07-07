@@ -262,3 +262,24 @@ const observer = new IntersectionObserver((entries) => {
 hiddenElements.forEach((element) => {
   observer.observe(element);
 });
+
+const sections = document.querySelectorAll("section, footer");
+const navLinks = document.querySelectorAll(".nav-link");
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${entry.target.id}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+});
+
+sections.forEach((section) => {
+  navObserver.observe(section);
+});
