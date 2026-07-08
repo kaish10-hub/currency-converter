@@ -5,8 +5,8 @@ A modern and responsive **Currency Converter** built using **HTML, CSS, and Java
 ---
 
 ###
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Website-00C853?style=for-the-badge)](https://your-project.netlify.app)
-[![Netlify Status](https://img.shields.io/badge/Hosted_on-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://your-project.netlify.app)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Website-00C853?style=for-the-badge)](https://quick-currencyconverter.netlify.app/)
+[![Netlify Status](https://img.shields.io/badge/Hosted_on-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://quick-currencyconverter.netlify.app/)
 
 ---
 
