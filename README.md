@@ -102,13 +102,16 @@ Open index.html in your browser
 
 ---
 
-## 👨‍💻 Author
+## 👥 Authors
 
-**Mohd Kaish**
+### Mohd Kaish
+- 🌐 GitHub: [@kaish10-hub](https://github.com/kaish10-hub)
+- 💼 LinkedIn: [Mohd Kaish](https://www.linkedin.com/in/mohd-kaish10)
 
-- GitHub: https://github.com/kaish10-hub
-- LinkedIn: https://www.linkedin.com/in/mohd-kaish10
-
+### Radhika Singh
+- 🌐 GitHub: [@Radhikasingh28](https://github.com/Radhikasingh28)
+- 💼 LinkedIn: [Radhika Singh](https://www.linkedin.com/in/radhika-singh-31b27a345/)
+  
 ---
 
 ## ⭐ Show your support
